@@ -18,5 +18,10 @@ namespace Ecommerce.Entidades
 		public int? BodegaId { get; set; }
 		public int? VarietalId { get; set; }
 		public bool Activo { get; set; }
+
+		public Categoria Categoria { get; set; }
+		public Bodega Bodega { get; set; }
+		public Varietal Varietal { get; set; }
+
 	}
 }
