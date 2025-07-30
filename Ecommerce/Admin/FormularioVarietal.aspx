@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FormularioBodega.aspx.cs" Inherits="Ecommerce.Admin.FormularioBodega" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FormularioVarietal.aspx.cs" Inherits="Ecommerce.Admin.FormularioVarietal" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Formulario Bodega</h2>
+    <h2>Formulario Varietal</h2>
 
     <div class="row">
         <div class="col-6">
@@ -22,7 +23,7 @@
             </div>
 
             <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnGuardar_Click" />
-            <a href="Bodegas.aspx" class="btn btn-secondary">Cancelar</a>
+            <a href="Varietales.aspx" class="btn btn-secondary">Cancelar</a>
         </div>
     </div>
 </asp:Content>

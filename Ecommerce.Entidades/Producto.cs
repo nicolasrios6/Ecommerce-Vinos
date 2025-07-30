@@ -20,7 +20,7 @@ namespace Ecommerce.Entidades
 		public bool Activo { get; set; }
 
 		public Categoria Categoria { get; set; }
-		public Bodega Bodega { get; set; }
+		public Varietal Bodega { get; set; }
 		public Varietal Varietal { get; set; }
 
 	}

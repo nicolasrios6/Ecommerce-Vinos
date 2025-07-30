@@ -37,7 +37,7 @@ namespace Ecommerce.Datos
 							Activo = (bool)datos.Lector["CategoriaActivo"]
 						},
 						Bodega = datos.Lector["BodegaId"] != DBNull.Value
-						? new Bodega
+						? new Varietal
 						  {
 							Id = (int)datos.Lector["BodegaId"],
 							Nombre = datos.Lector["BodegaNombre"].ToString(),

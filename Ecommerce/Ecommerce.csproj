@@ -106,7 +106,9 @@
     <Content Include="Admin\FormularioBodega.aspx" />
     <Content Include="Admin\FormularioCategoria.aspx" />
     <Content Include="Admin\FormularioProducto.aspx" />
+    <Content Include="Admin\FormularioVarietal.aspx" />
     <Content Include="Admin\Productos.aspx" />
+    <Content Include="Admin\Varietales.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -234,12 +236,26 @@
     <Compile Include="Admin\FormularioProducto.aspx.designer.cs">
       <DependentUpon>FormularioProducto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\FormularioVarietal.aspx.cs">
+      <DependentUpon>FormularioVarietal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FormularioVarietal.aspx.designer.cs">
+      <DependentUpon>FormularioVarietal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Productos.aspx.cs">
       <DependentUpon>Productos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Productos.aspx.designer.cs">
       <DependentUpon>Productos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Varietales.aspx.cs">
+      <DependentUpon>Varietales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Varietales.aspx.designer.cs">
+      <DependentUpon>Varietales.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
