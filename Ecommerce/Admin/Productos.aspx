@@ -2,6 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Gestión de Productos</h2>
     <a href="FormularioProducto.aspx" class="btn btn-primary">Agregar Producto</a>
+    <a href="Bodegas.aspx" class="btn btn-primary">Gestionar Bodegas</a>
+    <a href="Varietales.aspx" class="btn btn-primary">Gestionar Varietales</a>
+    <a href="Dashboard.aspx" class="btn btn-secondary">Volver</a>
     <asp:GridView ID="gvProductos" runat="server" CssClass="table" AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>

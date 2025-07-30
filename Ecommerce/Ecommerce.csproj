@@ -100,8 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\Bodegas.aspx" />
     <Content Include="Admin\Categorias.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\FormularioBodega.aspx" />
     <Content Include="Admin\FormularioCategoria.aspx" />
     <Content Include="Admin\FormularioProducto.aspx" />
     <Content Include="Admin\Productos.aspx" />
@@ -190,6 +192,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Bodegas.aspx.cs">
+      <DependentUpon>Bodegas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Bodegas.aspx.designer.cs">
+      <DependentUpon>Bodegas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Categorias.aspx.cs">
       <DependentUpon>Categorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -203,6 +212,13 @@
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FormularioBodega.aspx.cs">
+      <DependentUpon>FormularioBodega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FormularioBodega.aspx.designer.cs">
+      <DependentUpon>FormularioBodega.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\FormularioCategoria.aspx.cs">
       <DependentUpon>FormularioCategoria.aspx</DependentUpon>

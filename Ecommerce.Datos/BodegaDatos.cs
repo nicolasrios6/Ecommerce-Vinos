@@ -73,5 +73,66 @@ namespace Ecommerce.Datos
 				datos.cerrarConexion();
 			}
 		}
+
+		public Bodega ObtenerPorId(int id)
+		{
+			AccesoDatos datos = new AccesoDatos();
+			try
+			{
+				datos.setConsulta("SELECT Id, Nombre, Activo FROM Bodegas WHERE Id = @id");
+				datos.setParametro("@id", id);
+				datos.ejecutarLectura();
+
+				if(datos.Lector.Read())
+				{
+					return new Bodega
+					{
+						Id = (int)datos.Lector["Id"],
+						Nombre = datos.Lector["Nombre"].ToString(),
+						Activo = (bool)datos.Lector["Activo"]
+					};
+				}
+				return null;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al obtener la bodega.", ex);
+			} finally
+			{
+				datos.cerrarConexion();
+			}
+		}
+
+		public void Agregar(string nombre)
+		{
+			AccesoDatos datos = new AccesoDatos();
+			try
+			{
+				datos.setConsulta("INSERT INTO Bodegas (Nombre, Activo) VALUES (@nombre, 1)");
+				datos.setParametro("@nombre", nombre);
+				datos.ejecutarAccion();
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al agregar bodega.", ex);
+			}
+		}
+
+		public void Modificar(Bodega bodega)
+		{
+			AccesoDatos datos = new AccesoDatos();
+			try
+			{
+				datos.setConsulta("UPDATE Bodegas SET Nombre = @nombre, Activo = @activo WHERE Id = @id");
+				datos.setParametro("@nombre", bodega.Nombre);
+				datos.setParametro("@activo", bodega.Activo);
+				datos.setParametro("@id", bodega.Id);
+				datos.ejecutarAccion();
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al modificar bodega.", ex);
+			}
+		}
 	}
 }

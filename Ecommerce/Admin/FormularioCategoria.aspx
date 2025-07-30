@@ -23,6 +23,7 @@
             </div>
 
             <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnGuardar_Click" />
+            <a href="Categorias.aspx" class="btn btn-secondary">Cancelar</a>
         </div>
     </div>
 </asp:Content>
