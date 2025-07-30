@@ -13,10 +13,10 @@
                 <label class="form-label" for="txtDescripcion">Descripción</label>
                 <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
             </div>
-            <div class="form-group mb-3">
+            <%--<div class="form-group mb-3">
                 <label class="form-label" for="txtImagenUrl">Url de Imágen</label>
                 <asp:TextBox ID="txtImagenUrl" runat="server" CssClass="form-control"></asp:TextBox>
-            </div>
+            </div>--%>
             <div class="form-group mb-3">
                 <label class="form-label" for="txtNombre">Precio</label>
                 <asp:TextBox ID="txtPrecio" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
@@ -41,6 +41,22 @@
                 <%--<label class="form-label" for="chkActivo">Activo</label>--%>
                 <asp:CheckBox ID="chkActivo" runat="server" Checked="true" Text="Activo"/>
             </div>
+
+            <asp:Label ID="lblError" runat="server" CssClass="text-danger" EnableViewState="false" />
+
+            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnGuardar_Click"/>
+            <a href="Productos.aspx" class="btn btn-secondary">Cancelar</a>
+        </div>
+        <div class="col-6">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="txtImagenUrl">Url de Imágen</label>
+                        <asp:TextBox ID="txtImagenUrl" runat="server" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtImagenUrl_TextChanged"></asp:TextBox>
+                    </div>
+                    <asp:Image ID="imgProducto" runat="server" ImageUrl="https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png" Width="60%" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
     </div>
 </asp:Content>

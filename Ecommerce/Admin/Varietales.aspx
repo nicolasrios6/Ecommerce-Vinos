@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Gestión de Varietales</h2>
     <a href="FormularioVarietal.aspx" class="btn btn-primary mb-3">Agregar Varietal</a>
-    <a href="Dashboard.aspx" class="btn btn-secondary mb-3">Volver</a>
+    <a href="Productos.aspx" class="btn btn-secondary mb-3">Volver</a>
 
     <asp:GridView ID="gvVarietales" runat="server" DataKeyNames="Id" AutoGenerateColumns="false" CssClass="table" OnSelectedIndexChanged="gvVarietales_SelectedIndexChanged">
         <Columns>

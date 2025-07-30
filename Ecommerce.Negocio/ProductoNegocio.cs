@@ -23,5 +23,61 @@ namespace Ecommerce.Negocio
 				throw new Exception("Error al obtener los productos.", ex);
 			}
 		}
+
+		public List<Producto> ObtenerActivos()
+		{
+			ProductoDatos datos = new ProductoDatos();
+			try
+			{
+				return datos.ObtenerActivos();
+			}
+			catch (Exception ex)
+			{
+
+				throw new Exception("Error al obtener los productos activos.", ex);
+			}
+		}
+
+		public Producto ObtenerPorId(int id)
+		{
+			ProductoDatos datos = new ProductoDatos();
+			try
+			{
+				return datos.ObtenerPorId(id);
+			}
+			catch (Exception ex)
+			{
+
+				throw new Exception("Error al obtener el producto.", ex);
+			}
+		}
+
+		public void Agregar(Producto producto)
+		{
+			ProductoDatos datos = new ProductoDatos();
+			try
+			{
+				datos.Agregar(producto);
+			}
+			catch (Exception ex)
+			{
+
+				throw new Exception("Error al agregar producto.", ex);
+			}
+		}
+
+		public void Modificar(Producto producto)
+		{
+			ProductoDatos datos = new ProductoDatos();
+			try
+			{
+				datos.Modificar(producto);
+			}
+			catch (Exception ex)
+			{
+
+				throw new Exception("Error al modificar producto.", ex);
+			}
+		}
 	}
 }
