@@ -29,7 +29,8 @@ namespace Ecommerce.Datos
 			catch (Exception ex)
 			{
 				throw new Exception("Error al registrar el usuario.", ex);
-			} finally
+			}
+			finally
 			{
 				datos.cerrarConexion();
 			}
@@ -45,7 +46,7 @@ namespace Ecommerce.Datos
 				datos.setParametro("@Contrasenia", contrasenia);
 				datos.ejecutarLectura();
 
-				if(datos.Lector.Read())
+				if (datos.Lector.Read())
 				{
 					Usuario usuario = new Usuario();
 					usuario.Id = (int)datos.Lector["Id"];
@@ -63,7 +64,8 @@ namespace Ecommerce.Datos
 			catch (Exception ex)
 			{
 				throw new Exception("Error al intentar iniciar sesión", ex);
-			} finally
+			}
+			finally
 			{
 				datos.cerrarConexion();
 			}
@@ -82,10 +84,97 @@ namespace Ecommerce.Datos
 			catch (Exception ex)
 			{
 				throw new Exception("Error al buscar usuario por email en la base de datos.", ex);
+			}
+			finally
+			{
+				datos.cerrarConexion();
+			}
+		}
+
+		public Usuario BuscarPorId(int id)
+		{
+			AccesoDatos datos = new AccesoDatos();
+			try
+			{
+				datos.setConsulta("SELECT * FROM Usuarios WHERE Id = @Id");
+				datos.setParametro("@Id", id);
+				datos.ejecutarLectura();
+
+				if(datos.Lector.Read())
+				{
+					Usuario usuario = new Usuario
+					{
+						Id = (int)datos.Lector["Id"],
+						Nombre = datos.Lector["Nombre"].ToString(),
+						Apellido = datos.Lector["Apellido"].ToString(),
+						Email = datos.Lector["Email"].ToString(),
+						Activo = (bool)datos.Lector["Activo"]
+					};
+					return usuario;
+				}
+				return null;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al buscar usuario por id en la base de datos.", ex);
+			}
+			finally
+			{
+				datos.cerrarConexion();
+			}
+		}
+
+		public List<Usuario> ObtenerClientes()
+		{
+			AccesoDatos datos = new AccesoDatos();
+			List<Usuario> lista = new List<Usuario>();
+			try
+			{
+				datos.setProcedimiento("Usuario_ObtenerClientes");
+				datos.ejecutarLectura();
+
+				while (datos.Lector.Read())
+				{
+					Usuario usuario = new Usuario
+					{
+						Id = (int)datos.Lector["Id"],
+						Nombre = datos.Lector["Nombre"].ToString(),
+						Apellido = datos.Lector["Apellido"].ToString(),
+						Email = datos.Lector["Email"].ToString(),
+						Activo = (bool)datos.Lector["Activo"]
+					};
+					lista.Add(usuario);
+				}
+				return lista;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al traer los usuarios clientes.", ex);
 			} finally
 			{
 				datos.cerrarConexion();
 			}
 		}
+
+		public void ActualizarEstado(int id, bool activo)
+		{
+			AccesoDatos datos = new AccesoDatos();
+			try
+			{
+				datos.setProcedimiento("Usuario_ActualizarEstado");
+				datos.setParametro("@Id", id);
+				datos.setParametro("@Activo", activo);
+				datos.ejecutarAccion();
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al actualizar el estado del usuario.", ex);
+			}
+			finally
+			{
+				datos.cerrarConexion();
+			}
+		}
+
 	}
 }

@@ -35,5 +35,37 @@ namespace Ecommerce.Negocio
 
 			return null;
 		}
+
+		public Usuario BuscarPorId(int id)
+		{
+			UsuarioDatos datos = new UsuarioDatos();
+			try
+			{
+				return datos.BuscarPorId(id);
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al buscar el usuario por id.", ex);
+			}
+		}
+
+		public List<Usuario> ObtenerClientes()
+		{
+			UsuarioDatos datos = new UsuarioDatos();
+			try
+			{
+				return datos.ObtenerClientes();
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al obtener los usuarios clientes.", ex);
+			}
+		}
+
+		public void ActualizarEstado(int id, bool activo)
+		{
+			UsuarioDatos datos = new UsuarioDatos();
+			datos.ActualizarEstado(id, activo);
+		}
 	}
 }
