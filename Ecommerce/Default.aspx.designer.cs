@@ -15,12 +15,21 @@ namespace Ecommerce
 	{
 
 		/// <summary>
-		/// Control lblNombre.
+		/// Control rblCategorias.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblNombre;
+		protected global::System.Web.UI.WebControls.RadioButtonList rblCategorias;
+
+		/// <summary>
+		/// Control repCatalogo.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Repeater repCatalogo;
 	}
 }

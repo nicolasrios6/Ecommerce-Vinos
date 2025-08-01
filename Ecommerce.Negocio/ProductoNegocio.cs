@@ -52,6 +52,19 @@ namespace Ecommerce.Negocio
 			}
 		}
 
+		public List<Producto> ObtenerPorCategoria(int categoriaId)
+		{
+			ProductoDatos datos = new ProductoDatos();
+			try
+			{
+				return datos.ObtenerPorCategoria(categoriaId);
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al obtener productos por categoria.", ex);
+			}
+		}
+
 		public void Agregar(Producto producto)
 		{
 			ProductoDatos datos = new ProductoDatos();

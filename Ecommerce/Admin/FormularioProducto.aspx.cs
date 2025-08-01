@@ -38,6 +38,7 @@ namespace Ecommerce.Admin
 				txtPrecio.Text = producto.Precio.ToString("0");
 				txtStock.Text = producto.Stock.ToString();
 				chkActivo.Checked = producto.Activo;
+				imgProducto.ImageUrl = producto.ImagenUrl;
 
 				ddlCategoria.SelectedValue = producto.CategoriaId.ToString();
 
