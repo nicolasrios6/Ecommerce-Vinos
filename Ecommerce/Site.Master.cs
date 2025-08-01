@@ -33,7 +33,7 @@ namespace Ecommerce
 		{
 			Session.Clear();
 			Session.Abandon();
-			Response.Redirect("Login.aspx");
+			Response.Redirect("~/Login.aspx");
 		}
 	}
 }

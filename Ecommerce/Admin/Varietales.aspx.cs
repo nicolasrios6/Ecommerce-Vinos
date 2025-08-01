@@ -12,6 +12,7 @@ namespace Ecommerce.Admin
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			Seguridad.VerificarAdmin(this);
 			if (!IsPostBack)
 			{
 				VarietalNegocio negocio = new VarietalNegocio();

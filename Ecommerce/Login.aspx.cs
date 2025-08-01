@@ -27,9 +27,13 @@ namespace Ecommerce
 			if (usuario != null)
 			{
 				Session["Usuario"] = usuario;
-
-				// Redirigir al home o a donde quieras
-				Response.Redirect("Default.aspx");
+				if(usuario.Rol == "Admin")
+				{
+					Response.Redirect("Admin/Dashboard.aspx");
+				} else
+				{
+					Response.Redirect("Default.aspx");
+				}
 			}
 			else
 			{

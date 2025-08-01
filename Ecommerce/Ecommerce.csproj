@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AccesoDenegado.aspx" />
     <Content Include="Admin\Bodegas.aspx" />
     <Content Include="Admin\Categorias.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
@@ -196,6 +197,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDenegado.aspx.cs">
+      <DependentUpon>AccesoDenegado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccesoDenegado.aspx.designer.cs">
+      <DependentUpon>AccesoDenegado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Bodegas.aspx.cs">
       <DependentUpon>Bodegas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

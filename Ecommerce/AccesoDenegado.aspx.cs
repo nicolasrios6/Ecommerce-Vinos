@@ -1,18 +1,17 @@
-﻿using Ecommerce.Negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Ecommerce.Admin
+namespace Ecommerce
 {
-	public partial class Dashboard : System.Web.UI.Page
+	public partial class AccesoDenegado : System.Web.UI.Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			Seguridad.VerificarAdmin(this);
+			//Response.AddHeader("REFRESH", "15;URL=~/Default.aspx");
 		}
 	}
 }
