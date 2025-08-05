@@ -17,7 +17,7 @@
             <%-- Seccion de productos --%>
             <div class="col-9">
                 <div class="row">
-                    <asp:Repeater ID="repCatalogo" runat="server">
+                    <asp:Repeater ID="repCatalogo" runat="server" OnItemCommand="repCatalogo_ItemCommand">
                         <ItemTemplate>
                             <div class="col-4 mb-4 d-flex justify-content-center">
                                 <div class="card d-flex flex-column align-items-center text-center p-2" style="width: 300px; height: 100%;">
@@ -46,7 +46,10 @@
 
                                     <!-- Botón al final de la tarjeta -->
                                     <a href='DetalleProducto.aspx?id=<%# Eval("Id") %>' class="btn btn-sm btn-secondary">Ver detalle</a>
-                                    <asp:Button ID="btnAgregarCarrito" runat="server" Text="Agregar al carrito" CssClass="btn btn-sm btn-primary mt-2" />
+                                    <asp:Button ID="btnAgregarCarrito" runat="server" 
+                                        Text="Agregar al carrito" CssClass="btn btn-sm btn-primary mt-2" 
+                                        CommandName="Agregar" CommandArgument='<%#Eval("Id") %>'
+                                    />
                                 </div>
                             </div>
                         </ItemTemplate>

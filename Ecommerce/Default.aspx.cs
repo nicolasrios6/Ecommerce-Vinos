@@ -16,6 +16,11 @@ namespace Ecommerce
 			if (!IsPostBack)
 			{
 				CargarCategorias();
+				if (Session["CategoriaSeleccionada"] != null)
+				{
+					int categoriaId = (int)Session["CategoriaSeleccionada"];
+					rblCategorias.SelectedValue = categoriaId.ToString();
+				}
 				CargarCatalogo();
 			}
 			
@@ -54,7 +59,46 @@ namespace Ecommerce
 
 		protected void rblCategorias_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			int categoriaId = int.Parse(rblCategorias.SelectedValue);
+			Session["CategoriaSeleccionada"] = categoriaId;
 			CargarCatalogo();
 		}
-	}
+
+        protected void repCatalogo_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+			//Seguridad seguridad = new Seguridad();
+			if(e.CommandName == "Agregar")
+			{
+				int productoId = Convert.ToInt32(e.CommandArgument);
+				ProductoNegocio negocio = new ProductoNegocio();
+				Producto producto = negocio.ObtenerPorId(productoId);
+
+				if(producto == null)
+				{
+					return;
+				}
+
+				List<ItemCarrito> carrito = Session["Carrito"] as List<ItemCarrito> ?? new List<ItemCarrito>();
+
+				ItemCarrito existente = carrito.Find(x => x.ProductoId == productoId);
+				if(existente != null)
+				{
+					existente.Cantidad++;
+				} else
+				{
+					ItemCarrito nuevoItem = new ItemCarrito
+					{
+						ProductoId = productoId,
+						Nombre = producto.Nombre,
+						ImagenUrl = producto.ImagenUrl,
+						Precio = producto.Precio,
+						Cantidad = 1
+					};
+					carrito.Add(nuevoItem);
+				}
+				Session["Carrito"] = carrito;
+				Response.Redirect(Request.RawUrl);
+			}
+        }
+    }
 }

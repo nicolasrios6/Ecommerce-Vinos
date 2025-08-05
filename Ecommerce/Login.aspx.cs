@@ -23,14 +23,18 @@ namespace Ecommerce
 
 			UsuarioNegocio negocio = new UsuarioNegocio();
 			Usuario usuario = negocio.Login(email, contrasenia);
-
+			string returnUrl = Request.QueryString["ReturnUrl"];
 			if (usuario != null)
 			{
 				Session["Usuario"] = usuario;
-				if(usuario.Rol == "Admin")
+				if (usuario.Rol == "Admin")
 				{
 					Response.Redirect("Admin/Dashboard.aspx");
-				} else
+				} else if (!string.IsNullOrEmpty(returnUrl)) 
+				{
+					Response.Redirect(returnUrl);
+				}
+				else
 				{
 					Response.Redirect("Default.aspx");
 				}

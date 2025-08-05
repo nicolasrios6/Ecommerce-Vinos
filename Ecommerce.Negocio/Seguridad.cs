@@ -56,7 +56,7 @@ namespace Ecommerce.Negocio
 				page.Response.Redirect("~/Login.aspx");
 		}
 
-		public static void RedirigirSiNoLogueado(Page page)
+		public void RedirigirSiNoLogueado(Page page)
 		{
 			if (!UsuarioLogueado(page.Session))
 				page.Response.Redirect("~/Login.aspx");

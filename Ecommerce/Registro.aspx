@@ -25,6 +25,7 @@
             <div class="mb-3">
                 <asp:Button ID="btnRegistro" runat="server" Text="Registrarse" CssClass="btn btn-primary" OnClick="btnRegistro_Click"/>
             </div>
+            <a href="Login.aspx">¿Ya tenes cuenta? Inicia Sesión!</a>
             <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
         </div>
     </div>
