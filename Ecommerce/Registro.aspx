@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="Ecommerce.Registro" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="col-6">
@@ -23,10 +24,12 @@
             </div>
 
             <div class="mb-3">
-                <asp:Button ID="btnRegistro" runat="server" Text="Registrarse" CssClass="btn btn-primary" OnClick="btnRegistro_Click"/>
+                <asp:Button ID="btnRegistro" runat="server" Text="Registrarse" CssClass="btn btn-primary" OnClick="btnRegistro_Click" />
             </div>
-            <a href="Login.aspx">¿Ya tenes cuenta? Inicia Sesión!</a>
-            <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
+            <div class="d-flex flex-column">
+                <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
+                <a href="Login.aspx">¿Ya tenes cuenta? Inicia Sesión!</a>
+            </div>
         </div>
     </div>
 </asp:Content>

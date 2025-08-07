@@ -17,8 +17,10 @@
         <div class="mb-3">
             <asp:Button ID="btnLogin" runat="server" Text="Iniciar Sesión" CssClass="btn btn-primary" OnClick="btnLogin_Click"/>
         </div>
-        <a href="Registro.aspx">¿No tenes cuenta? Registrate!</a>
-        <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
+        <div class="d-flex flex-column">
+            <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
+            <a href="Registro.aspx">¿No tenes cuenta? Registrate!</a>
+        </div>
     </div>
 </div>
 </asp:Content>

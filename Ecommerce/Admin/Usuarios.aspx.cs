@@ -45,5 +45,20 @@ namespace Ecommerce.Admin
 				}
 			}
 		}
+
+		protected void btnConfirmarInactivar_Click(object sender, EventArgs e)
+		{
+			int idUsuario = int.Parse(hdnIdUsuario.Value);
+
+			UsuarioNegocio negocio = new UsuarioNegocio();
+			Usuario usuario = negocio.BuscarPorId(idUsuario);
+
+			if(usuario != null)
+			{
+				bool estadoNuevo = !usuario.Activo;
+				negocio.ActualizarEstado(idUsuario, estadoNuevo);
+				Response.Redirect(Request.RawUrl);
+			}
+		}
 	}
 }

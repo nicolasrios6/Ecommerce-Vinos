@@ -22,5 +22,23 @@ namespace Ecommerce.Admin
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.GridView gvUsuarios;
+
+		/// <summary>
+		/// Control hdnIdUsuario.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.HiddenField hdnIdUsuario;
+
+		/// <summary>
+		/// Control btnConfirmarInactivar.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.LinkButton btnConfirmarInactivar;
 	}
 }
