@@ -15,6 +15,10 @@
                 <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             <div class="mb-3">
+                <label for="txtTelefono" class="form-label">Teléfono</label>
+                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="mb-3">
                 <label for="txtEmail" class="form-label">Email</label>
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
             </div>

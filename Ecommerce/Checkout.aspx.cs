@@ -28,6 +28,7 @@ namespace Ecommerce
 					txtNombre.Text = usuario.Nombre;
 					txtApellido.Text = usuario.Apellido;
 					txtEmail.Text = usuario.Email;
+					txtTelefono.Text = usuario.Telefono;
 				}
 
 			}

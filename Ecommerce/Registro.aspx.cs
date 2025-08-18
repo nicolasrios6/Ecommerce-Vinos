@@ -26,7 +26,8 @@ namespace Ecommerce
 				Email = txtEmail.Text.Trim(),
 				Contrasenia = txtContrasenia.Text.Trim(),
 				Rol = "Cliente",
-				Activo = true
+				Activo = true,
+				Telefono = txtTelefono.Text.Trim(),
 			};
 
 			try

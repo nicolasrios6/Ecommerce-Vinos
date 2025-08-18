@@ -23,6 +23,7 @@ namespace Ecommerce.Datos
 				datos.setParametro("@Contrasenia", nuevoUsuario.Contrasenia);
 				datos.setParametro("@Rol", nuevoUsuario.Rol);
 				datos.setParametro("@Activo", nuevoUsuario.Activo);
+				datos.setParametro("@Telefono", nuevoUsuario.Telefono);
 
 				datos.ejecutarAccion();
 			}
@@ -56,6 +57,7 @@ namespace Ecommerce.Datos
 					usuario.Contrasenia = datos.Lector["Contrasenia"].ToString();
 					usuario.Rol = datos.Lector["Rol"].ToString();
 					usuario.Activo = (bool)datos.Lector["Activo"];
+					usuario.Telefono = datos.Lector["Telefono"].ToString();
 
 					return usuario;
 				}
@@ -108,7 +110,8 @@ namespace Ecommerce.Datos
 						Nombre = datos.Lector["Nombre"].ToString(),
 						Apellido = datos.Lector["Apellido"].ToString(),
 						Email = datos.Lector["Email"].ToString(),
-						Activo = (bool)datos.Lector["Activo"]
+						Activo = (bool)datos.Lector["Activo"],
+						Telefono = datos.Lector["Telefono"].ToString(),
 					};
 					return usuario;
 				}
