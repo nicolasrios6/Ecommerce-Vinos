@@ -9,6 +9,108 @@ namespace Ecommerce.Datos
 {
 	public class PedidoDatos
 	{
+		public List<Pedido> ObtenerTodos()
+		{
+			AccesoDatos datos =  new AccesoDatos();
+			List<Pedido> lista = new List<Pedido>();
+
+			try
+			{
+				datos.setProcedimiento("Pedido_ObtenerTodos");
+				datos.ejecutarLectura();
+
+				while(datos.Lector.Read())
+				{
+					Pedido pedido = new Pedido
+					{
+						Id = (int)datos.Lector["Id"],
+						UsuarioId = (int)datos.Lector["UsuarioId"],
+						Fecha = (DateTime)datos.Lector["Fecha"],
+						Estado = datos.Lector["Estado"].ToString(),
+						Subtotal = (decimal)datos.Lector["Subtotal"],
+						Envio = (decimal)datos.Lector["Envio"],
+						Total = (decimal)datos.Lector["Total"],
+						DireccionEnvio = datos.Lector["DireccionEnvio"].ToString(),
+						MetodoEnvio = datos.Lector["MetodoEnvio"].ToString(),
+						MetodoPago = datos.Lector["MetodoPago"].ToString(),
+						Observaciones = datos.Lector["Observaciones"].ToString(),
+						NombreUsuario = datos.Lector["NombreUsuario"].ToString()
+					};
+
+					lista.Add(pedido);
+				}
+				return lista;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al obtener los pedidos.", ex);
+			} finally
+			{
+				datos.cerrarConexion();
+			}
+		}
+		public Pedido ObtenerPorId(int id)
+		{
+			AccesoDatos datos = new AccesoDatos();
+
+			try
+			{
+				datos.setProcedimiento("Pedido_ObtenerPorId");
+				datos.setParametro("@PedidoId", id);
+				datos.ejecutarLectura();
+
+				if(datos.Lector.Read())
+				{
+					Pedido pedido = new Pedido
+					{
+						Id = (int)datos.Lector["Id"],
+						UsuarioId = (int)datos.Lector["UsuarioId"],
+						Fecha = (DateTime)datos.Lector["Fecha"],
+						Estado = datos.Lector["Estado"].ToString(),
+						Subtotal = (decimal)datos.Lector["Subtotal"],
+						Envio = (decimal)datos.Lector["Envio"],
+						Total = (decimal)datos.Lector["Total"],
+						DireccionEnvio = datos.Lector["DireccionEnvio"].ToString(),
+						MetodoEnvio = datos.Lector["MetodoEnvio"].ToString(),
+						MetodoPago = datos.Lector["MetodoPago"].ToString(),
+						Observaciones = datos.Lector["Observaciones"].ToString()
+					};
+
+					if (datos.Lector["NombreUsuario"] != DBNull.Value)
+						pedido.NombreUsuario = datos.Lector["NombreUsuario"].ToString();
+
+					// Segundo resultado: Detalles del pedido
+					if (pedido != null && datos.Lector.NextResult())
+					{
+						while (datos.Lector.Read())
+						{
+							var detalle = new DetallePedido
+							{
+								Id = (int)datos.Lector["Id"],
+								PedidoId = (int)datos.Lector["PedidoId"],
+								ProductoId = (int)datos.Lector["ProductoId"],
+								NombreProducto = datos.Lector["NombreProducto"].ToString(),
+								Cantidad = (int)datos.Lector["Cantidad"],
+								PrecioUnitario = (decimal)datos.Lector["PrecioUnitario"],
+								Subtotal = (decimal)datos.Lector["Subtotal"]
+							};
+
+							pedido.Detalles.Add(detalle);
+						}
+					}
+
+					return pedido;
+				}
+				return null;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al obtener el pedido por id.", ex);
+			} finally
+			{
+				datos.cerrarConexion();
+			}
+		}
 		public void Crear(Pedido pedido)
 		{
 			AccesoDatos datos = new AccesoDatos();
@@ -58,6 +160,26 @@ namespace Ecommerce.Datos
 			{
 				throw new Exception("Error al crear el pedido.", ex);
 			} finally
+			{
+				datos.cerrarConexion();
+			}
+		}
+
+		public void ActualizarEstado(int id, string estado)
+		{
+			AccesoDatos datos = new AccesoDatos();
+			try
+			{
+				datos.setProcedimiento("Pedido_ActualizarEstado");
+				datos.setParametro("@Id", id);
+				datos.setParametro("@Estado", estado);
+				datos.ejecutarAccion();
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al actualizar el estado del pedido.", ex);
+			}
+			finally
 			{
 				datos.cerrarConexion();
 			}

@@ -13,10 +13,6 @@
                 <label class="form-label" for="txtDescripcion">Descripción</label>
                 <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
             </div>
-            <%--<div class="form-group mb-3">
-                <label class="form-label" for="txtImagenUrl">Url de Imágen</label>
-                <asp:TextBox ID="txtImagenUrl" runat="server" CssClass="form-control"></asp:TextBox>
-            </div>--%>
             <div class="form-group mb-3">
                 <label class="form-label" for="txtNombre">Precio</label>
                 <asp:TextBox ID="txtPrecio" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
@@ -32,13 +28,14 @@
             <div class="form-group mb-3">
                 <label class="form-label" for="ddlVarietal">Varietal</label>
                 <asp:DropDownList ID="ddlVarietal" runat="server" CssClass="form-select"></asp:DropDownList>
+                <asp:LinkButton ID="btnNuevoVarietal" runat="server" CssClass="btn btn-link p-0" OnClick="btnNuevoVarietal_Click">Agregar nuevo Varietal</asp:LinkButton>
             </div>
             <div class="form-group mb-3">
                 <label class="form-label" for="ddlBodega">Bodega</label>
                 <asp:DropDownList ID="ddlBodega" runat="server" CssClass="form-select"></asp:DropDownList>
+                <asp:LinkButton ID="btnNuevaBodega" runat="server" CssClass="btn btn-link p-0" OnClick="btnNuevaBodega_Click">Agregar nueva Bodega</asp:LinkButton>
             </div>
             <div class="form-group mb-3">
-                <%--<label class="form-label" for="chkActivo">Activo</label>--%>
                 <asp:CheckBox ID="chkActivo" runat="server" Checked="true" Text="Activo"/>
             </div>
 

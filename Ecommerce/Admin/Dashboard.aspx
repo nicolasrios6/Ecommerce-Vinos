@@ -5,8 +5,7 @@
     <ul>
         <li><a href="Productos.aspx">Gestionar Productos</a></li>
         <li><a href="Categorias.aspx">Gestionar Categorías</a></li>
-        <li><a href="#">Gestionar Pedidos</a></li>
+        <li><a href="Pedidos.aspx">Gestionar Pedidos</a></li>
         <li><a href="Usuarios.aspx">Gestionar Usuarios</a></li>
-        <li><a href="#">Gestionar Pagos</a></li>
     </ul>
 </asp:Content>

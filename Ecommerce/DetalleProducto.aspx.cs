@@ -1,4 +1,5 @@
-﻿using Ecommerce.Entidades;
+﻿using Ecommerce.Admin;
+using Ecommerce.Entidades;
 using Ecommerce.Negocio;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,11 @@ namespace Ecommerce
 {
 	public partial class DetalleProducto : System.Web.UI.Page
 	{
+		//private Producto ProductoActual
+		//{
+		//	get => (Producto)ViewState["ProductoActual"];
+		//	set => ViewState["ProductoActual"] = value;
+		//}
 		public Producto ProductoActual { get; set; }
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -66,14 +72,38 @@ namespace Ecommerce
 
 		protected void btnAgregarCarrito_Click(object sender, EventArgs e)
         {
-			if (Session["Usuario"] == null)
-			{
-				Response.Redirect("Login.aspx");
+			if (Request.QueryString["id"] == null || !int.TryParse(Request.QueryString["id"], out int productoId))
 				return;
+
+			ProductoNegocio negocio = new ProductoNegocio();
+			Producto producto = negocio.ObtenerPorId(productoId);
+
+			if (producto == null)
+				return;
+
+			List<ItemCarrito> carrito = Session["Carrito"] as List<ItemCarrito> ?? new List<ItemCarrito>();
+
+			ItemCarrito existente = carrito.Find(x => x.ProductoId == producto.Id);
+
+			if (existente != null)
+			{
+				existente.Cantidad++;
+			}
+			else
+			{
+				ItemCarrito nuevoItem = new ItemCarrito
+				{
+					ProductoId = producto.Id,
+					Nombre = producto.Nombre,
+					ImagenUrl = producto.ImagenUrl,
+					Precio = producto.Precio,
+					Cantidad = 1
+				};
+				carrito.Add(nuevoItem);
 			}
 
-			// TODO: Agregar al carrito (puede usarse Session["Carrito"] como List<Producto> o una clase personalizada)
-			Response.Write("<script>alert('Producto agregado al carrito');</script>");
+			Session["Carrito"] = carrito;
+			Response.Redirect(Request.RawUrl);
 		}
     }
 }

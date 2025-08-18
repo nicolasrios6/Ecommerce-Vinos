@@ -104,10 +104,12 @@
     <Content Include="Admin\Bodegas.aspx" />
     <Content Include="Admin\Categorias.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\DetallePedido.aspx" />
     <Content Include="Admin\FormularioBodega.aspx" />
     <Content Include="Admin\FormularioCategoria.aspx" />
     <Content Include="Admin\FormularioProducto.aspx" />
     <Content Include="Admin\FormularioVarietal.aspx" />
+    <Content Include="Admin\Pedidos.aspx" />
     <Content Include="Admin\Productos.aspx" />
     <Content Include="Admin\Usuarios.aspx" />
     <Content Include="Admin\Varietales.aspx" />
@@ -227,6 +229,13 @@
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\DetallePedido.aspx.cs">
+      <DependentUpon>DetallePedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DetallePedido.aspx.designer.cs">
+      <DependentUpon>DetallePedido.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\FormularioBodega.aspx.cs">
       <DependentUpon>FormularioBodega.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -254,6 +263,13 @@
     </Compile>
     <Compile Include="Admin\FormularioVarietal.aspx.designer.cs">
       <DependentUpon>FormularioVarietal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pedidos.aspx.cs">
+      <DependentUpon>Pedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pedidos.aspx.designer.cs">
+      <DependentUpon>Pedidos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Productos.aspx.cs">
       <DependentUpon>Productos.aspx</DependentUpon>

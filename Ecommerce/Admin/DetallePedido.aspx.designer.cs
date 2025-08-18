@@ -11,142 +11,160 @@ namespace Ecommerce.Admin
 {
 
 
-	public partial class FormularioProducto
+	public partial class DetallePedido
 	{
 
 		/// <summary>
-		/// Control txtNombre.
+		/// Control lblNumeroPedidoTitulo.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtNombre;
+		protected global::System.Web.UI.WebControls.Label lblNumeroPedidoTitulo;
 
 		/// <summary>
-		/// Control txtDescripcion.
+		/// Control pnlInfoPedido.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+		protected global::System.Web.UI.WebControls.Panel pnlInfoPedido;
 
 		/// <summary>
-		/// Control txtPrecio.
+		/// Control lblNumeroPedido.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtPrecio;
+		protected global::System.Web.UI.WebControls.Label lblNumeroPedido;
 
 		/// <summary>
-		/// Control txtStock.
+		/// Control lblCliente.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtStock;
+		protected global::System.Web.UI.WebControls.Label lblCliente;
 
 		/// <summary>
-		/// Control ddlCategoria.
+		/// Control lblFecha.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
+		protected global::System.Web.UI.WebControls.Label lblFecha;
 
 		/// <summary>
-		/// Control ddlVarietal.
+		/// Control lblMetodoEnvio.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.DropDownList ddlVarietal;
+		protected global::System.Web.UI.WebControls.Label lblMetodoEnvio;
 
 		/// <summary>
-		/// Control btnNuevoVarietal.
+		/// Control lblDireccion.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.LinkButton btnNuevoVarietal;
+		protected global::System.Web.UI.WebControls.Label lblDireccion;
 
 		/// <summary>
-		/// Control ddlBodega.
+		/// Control lblMetodoPago.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.DropDownList ddlBodega;
+		protected global::System.Web.UI.WebControls.Label lblMetodoPago;
 
 		/// <summary>
-		/// Control btnNuevaBodega.
+		/// Control lblObservaciones.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.LinkButton btnNuevaBodega;
+		protected global::System.Web.UI.WebControls.Label lblObservaciones;
 
 		/// <summary>
-		/// Control chkActivo.
+		/// Control pnlDetalles.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.CheckBox chkActivo;
+		protected global::System.Web.UI.WebControls.Panel pnlDetalles;
 
 		/// <summary>
-		/// Control lblError.
+		/// Control gvDetalles.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblError;
+		protected global::System.Web.UI.WebControls.GridView gvDetalles;
 
 		/// <summary>
-		/// Control btnGuardar.
+		/// Control lblSubtotal.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnGuardar;
+		protected global::System.Web.UI.WebControls.Label lblSubtotal;
 
 		/// <summary>
-		/// Control UpdatePanel1.
+		/// Control lblEnvio.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+		protected global::System.Web.UI.WebControls.Label lblEnvio;
 
 		/// <summary>
-		/// Control txtImagenUrl.
+		/// Control lblTotal.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtImagenUrl;
+		protected global::System.Web.UI.WebControls.Label lblTotal;
 
 		/// <summary>
-		/// Control imgProducto.
+		/// Control pnlEstado.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Image imgProducto;
+		protected global::System.Web.UI.WebControls.Panel pnlEstado;
+
+		/// <summary>
+		/// Control ddlEstado.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
+
+		/// <summary>
+		/// Control btnActualizarEstado.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button btnActualizarEstado;
 	}
 }

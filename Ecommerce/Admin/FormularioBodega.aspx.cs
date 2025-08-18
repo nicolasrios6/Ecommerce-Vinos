@@ -64,8 +64,16 @@ namespace Ecommerce.Admin
 				} else
 				{
 					bodegaNegocio.Agregar(bodega.Nombre);
+					string returnUrl = Request.QueryString["returnUrl"];
+
+					if(!string.IsNullOrEmpty(returnUrl))
+					{
+						Response.Redirect(returnUrl, false);
+					} else
+					{
+						Response.Redirect("Bodegas.aspx", false);
+					}
 				}
-				Response.Redirect("Bodegas.aspx", false);
 			}
 			catch (Exception ex)
 			{
