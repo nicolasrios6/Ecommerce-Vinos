@@ -111,6 +111,49 @@ namespace Ecommerce.Datos
 				datos.cerrarConexion();
 			}
 		}
+		public List<Pedido> ObtenerPorCliente(int clienteId)
+		{
+			AccesoDatos datos = new AccesoDatos();
+			List<Pedido> lista = new List<Pedido>();
+
+			try
+			{
+				datos.setProcedimiento("Pedido_ObtenerPorUsuario");
+				datos.setParametro("@UsuarioId", clienteId);
+				datos.ejecutarLectura();
+
+				while (datos.Lector.Read())
+				{
+					Pedido pedido = new Pedido
+					{
+						Id = (int)datos.Lector["Id"],
+						UsuarioId = (int)datos.Lector["UsuarioId"],
+						Fecha = (DateTime)datos.Lector["Fecha"],
+						Estado = datos.Lector["Estado"].ToString(),
+						Subtotal = (decimal)datos.Lector["Subtotal"],
+						Envio = (decimal)datos.Lector["Envio"],
+						Total = (decimal)datos.Lector["Total"],
+						DireccionEnvio = datos.Lector["DireccionEnvio"].ToString(),
+						MetodoEnvio = datos.Lector["MetodoEnvio"].ToString(),
+						MetodoPago = datos.Lector["MetodoPago"].ToString(),
+						Observaciones = datos.Lector["Observaciones"].ToString(),
+						NombreUsuario = datos.Lector["NombreUsuario"].ToString()
+					};
+
+					lista.Add(pedido);
+				}
+				return lista;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al obtener los pedidos del usuario.", ex);
+			}
+			finally
+			{
+				datos.cerrarConexion();
+			}
+		}
+
 		public void Crear(Pedido pedido)
 		{
 			AccesoDatos datos = new AccesoDatos();

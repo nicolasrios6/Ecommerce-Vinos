@@ -134,10 +134,12 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="DetallePedidoCliente.aspx" />
     <Content Include="DetalleProducto.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
+    <Content Include="MisPedidos.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -330,6 +332,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DetallePedidoCliente.aspx.cs">
+      <DependentUpon>DetallePedidoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetallePedidoCliente.aspx.designer.cs">
+      <DependentUpon>DetallePedidoCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DetalleProducto.aspx.cs">
       <DependentUpon>DetalleProducto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -346,6 +355,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisPedidos.aspx.cs">
+      <DependentUpon>MisPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisPedidos.aspx.designer.cs">
+      <DependentUpon>MisPedidos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.aspx.cs">

@@ -36,6 +36,19 @@ namespace Ecommerce.Negocio
 			}
 		}
 
+		public List<Pedido> ObtenerPorCliente(int clienteId)
+		{
+			PedidoDatos datos = new PedidoDatos();
+
+			try
+			{
+				return datos.ObtenerPorCliente(clienteId);
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error al obtener los pedidos del usuario.", ex);
+			}
+		}
 		public Pedido ObtenerPorId(int id)
 		{
 			PedidoDatos datos = new PedidoDatos();
