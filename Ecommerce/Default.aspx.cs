@@ -96,8 +96,10 @@ namespace Ecommerce
 					};
 					carrito.Add(nuevoItem);
 				}
+				((SiteMaster)Master).CargarCarrito();
+				((SiteMaster)Master).ActualizarUpdatePanel();
 				Session["Carrito"] = carrito;
-				Response.Redirect(Request.RawUrl);
+				//Response.Redirect(Request.RawUrl);
 			}
         }
     }

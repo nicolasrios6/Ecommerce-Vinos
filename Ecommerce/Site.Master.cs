@@ -34,7 +34,7 @@ namespace Ecommerce
 			//repCarrito.ItemCommand += repCarrito_ItemCommand;
 		}
 
-		private void CargarCarrito()
+		public void CargarCarrito()
 		{
 			if (Session["Carrito"] != null)
 			{
@@ -110,5 +110,9 @@ namespace Ecommerce
 			Response.Redirect("~/Login.aspx");
 		}
 
+		public void ActualizarUpdatePanel()
+		{
+			UpdatePanel1.Update();
+		}
 	}
 }
