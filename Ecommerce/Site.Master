@@ -40,26 +40,44 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark p-0">
             <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">Nombre de la aplicación</a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">Acerca de</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contacto</a></li>
-                        <li runat="server" id="liLogin" class="nav-item"><a class="nav-link" runat="server" href="~/Login">Login</a></li>
-                        <li runat="server" id="liRegistro" class="nav-item"><a class="nav-link" runat="server" href="~/Registro">Registro</a></li>
-                        <li runat="server" id="liMisPedidos" class="nav-item"><a class="nav-link" runat="server" href="MisPedidos.aspx">Mis Pedidos</a></li>
+
+                <!-- Logo -->
+                <a class="navbar-brand p-0" runat="server" href="~/">
+                    <img src="https://scontent.fmdz1-2.fna.fbcdn.net/v/t39.30808-1/240963762_384171269828035_3556077832706368555_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=s_MuV-GIFKIQ7kNvwFl3y7Q&_nc_oc=AdmY8yDo3-CdDV-xowryI4IQBfsfzaJkFG_VulfI-bJxcsI49gjuQ9xY5EZRuwT1VgQ&_nc_zt=24&_nc_ht=scontent.fmdz1-2.fna&_nc_gid=41UMyd2fFu9L4tspEWqyXg&oh=00_AfU-zSYvDtbSFd_a-g2IwYQy422d9x9lKOX37Y9iCpOb8Q&oe=68ABD43E" alt="Wine Shipper" class="d-inline-block align-text-top" style="height: 100px;">
+                </a>
+
+                <div class="d-flex align-items-center">
+
+                    <!-- Botón hamburguesa -->
+                    <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Carrito (MOBILE: visible junto al logo, DESKTOP: oculto porque se muestra dentro del menú) -->
+                    <a class="nav-link text-white d-md-none me-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" role="button" aria-controls="offcanvasCarrito">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+
+                </div>
+                <!-- Collapse con links -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-md-0">
+                        <li class="nav-item"><a class="nav-link text-white" runat="server" href="~/">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" runat="server" href="~/Default">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" runat="server" href="~/About">Acerca de</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" runat="server" href="~/Contact">Contacto</a></li>
+                        <li runat="server" id="liLogin" class="nav-item"><a class="nav-link text-white" runat="server" href="~/Login">Login</a></li>
+                        <li runat="server" id="liRegistro" class="nav-item"><a class="nav-link text-white" runat="server" href="~/Registro">Registro</a></li>
+                        <li runat="server" id="liMisPedidos" class="nav-item"><a class="nav-link text-white" runat="server" href="MisPedidos.aspx">Mis Pedidos</a></li>
                         <li id="liLogout" runat="server" class="nav-item" visible="false">
-                            <asp:LinkButton ID="btnLogout" runat="server" CssClass="nav-link" OnClick="btnLogout_Click">Cerrar sesión</asp:LinkButton>
+                            <asp:LinkButton ID="btnLogout" runat="server" CssClass="nav-link text-white" OnClick="btnLogout_Click">Cerrar sesión</asp:LinkButton>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" role="button" aria-controls="offcanvasCarrito">
+
+                        <!-- Carrito (DESKTOP: visible al final de los links, MOBILE: oculto porque se muestra arriba) -->
+                        <li class="nav-item d-none d-md-block">
+                            <a class="nav-link text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" role="button" aria-controls="offcanvasCarrito">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
                         </li>
@@ -67,6 +85,7 @@
                 </div>
             </div>
         </nav>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
